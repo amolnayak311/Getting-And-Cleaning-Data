@@ -76,7 +76,7 @@ melted <- melt(merged_data_set, id.vars = c('Subject', 'Label'))
 summary <- summarise(group_by(melted,Subject,Label,variable), mean=mean(value))
 colnames(summary) <- c('Subject', 'Label', 'Attribute', 'MeanAttributeValue')
 
-#Write out the dataframes as csv
+#Write out the dataframes to file
 write.table(summary, 'summarized_data.txt', row.names = FALSE)
 write.table(merged_data_set, 'complete_merged_dataset.txt', row.names = FALSE)
 
