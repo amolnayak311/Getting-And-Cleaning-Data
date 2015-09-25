@@ -1,10 +1,8 @@
-#Bad way to set the wd
-#setwd('C:\\My Stuff\\Amol\\Data Science\\Coursera, Johns Hopkins\\Getting and Cleaning Data\\Week 3\\Assignment')
-
 #Read the activity labels
 activity_labels <- read.table('./activity_labels.txt', col.names = c('activity_id', "activity_label_name"))
 
 #Read the features, just read the second column which is the name of the feature.
+
 features <- read.table('./features.txt')
 feature_names <- features[, 2]
 
@@ -65,6 +63,7 @@ complete_train_data <- cbind(train_subjects, train_features[,relevant_feature_in
 colnames(complete_train_data) <- column_names
 
 #Merge the two data sets, select the columns that are relevant.
+
 merged_data_set <- rbind(complete_test_data,complete_train_data)
 #dim(merged_data_set)
 #[1] 10299    68
@@ -79,5 +78,6 @@ colnames(summary) <- c('Subject', 'Label', 'Attribute', 'MeanAttributeValue')
 #Write out the dataframes to file
 write.table(summary, 'summarized_data.txt', row.names = FALSE)
 write.table(merged_data_set, 'complete_merged_dataset.txt', row.names = FALSE)
+cat('Successfully written the merged and summarized data to complete_merged_dataset.txt and summarized_data.txt respectively',sep = '\n')
 
 
