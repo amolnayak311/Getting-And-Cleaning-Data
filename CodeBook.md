@@ -34,7 +34,8 @@ The above expression strips off all the '-' and '()' from the names of the featu
 So for Instance *tBodyAcc-mean()-X* becomes *tBodyAccMeanX*
 
 Following are the features found in the data set. Note that the order of the fields given below and in the actual data written
-to the files is not same. For all other fields except Subject and Label, refer to the source data set for the meaning.
+to the files is not same. For all other fields except Subject and Label, refer to the source data set for the meaning. Refer to the
+[readme file](https://github.com/amolnayak311/Getting-And-Cleaning-Data/blob/master/DATASET_README.txt) and the Link provided earlier for the data set's homepage for more details 
 
 |	Feature Name					|	Description																				|
 |-----------------------------------|-------------------------------------------------------------------------------------------|
@@ -107,4 +108,12 @@ to the files is not same. For all other fields except Subject and Label, refer t
 | fBodyAccMagStd      				|                               															| 
 | fBodyBodyGyroMagStd 				|                               															| 
 
-### Data Format
+### Data Files Generated
+
+Two files are written out by the script
+
+- **complete_merged_dataset.txt** : This is the file that contains the merged Test data followed by training data. Each row corresponds to 
+an observation and there each row would have a total of 68 columns mentioned above (not in the same order as mentioned above)
+
+- **summarized_data.txt** : This file contains 4 columns. One each for the Subject, Activity, Feature and the Mean value of the feature.
+This is the file that is grouped by the Subject and Activity and gives the mean value of each feature for the given Subject and Activity
